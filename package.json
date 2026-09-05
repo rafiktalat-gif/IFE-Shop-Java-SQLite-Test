@@ -1,0 +1,9 @@
+{
+  "name": "ife-shop-java-sqlite-test",
+  "version": "1.0.0",
+  "description": "IFE Shop native Java SQLite persistence test",
+  "private": true,
+  "dependencies": {
+    "cordova": "^13.0.0"
+  }
+}
