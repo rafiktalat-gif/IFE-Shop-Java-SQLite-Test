@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IFE Shop SQLite Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>IFE Shop — Java SQLite Test</h2>
+
+  <div class="row">
+    <input id="name" type="text" placeholder="Enter a name" autocomplete="off">
+    <button id="save">SAVE</button>
+  </div>
+
+  <button id="refresh">REFRESH</button>
+  <button id="clear">CLEAR ALL</button>
+
+  <div id="status">Waiting for Cordova…</div>
+  <h3>Saved records</h3>
+  <ol id="records"></ol>
+
+  <script src="cordova.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
