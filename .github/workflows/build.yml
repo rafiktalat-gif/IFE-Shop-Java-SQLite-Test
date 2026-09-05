@@ -1,0 +1,49 @@
+name: Build IFE Shop Java SQLite Test
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Cordova CLI
+        run: npm install -g cordova@13
+
+      - name: Set up Java Development Kit (JDK 17)
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: '17'
+
+      - name: Set up Android SDK Tools
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android 36 Platform and Build Tools
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Add Cordova Android 15.1.0
+        run: cordova platform add android@15.1.0
+
+      - name: Add IFE SQLite plugin
+        run: cordova plugin add ./plugins/cordova-plugin-ife-sqlite
+
+      - name: Build Debug APK
+        run: cordova build android --debug
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: IFE-Shop-Java-SQLite-Test
+          path: platforms/android/app/build/outputs/apk/debug/app-debug.apk
+          
