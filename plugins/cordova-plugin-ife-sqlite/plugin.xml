@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-ife-sqlite" version="1.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>IFE SQLite</name>
+    <description>Native Android SQLite bridge for IFE Shop.</description>
+    <license>MIT</license>
+
+    <js-module src="www/ife-sqlite.js" name="IfeSQLite">
+        <clobbers target="IfeSQLite" />
+    </js-module>
+
+    <platform name="android">
+        <source-file src="src/android/IfeSQLite.java" target-dir="src/com/ife/shop/sqlite" />
+    </platform>
+</plugin>
