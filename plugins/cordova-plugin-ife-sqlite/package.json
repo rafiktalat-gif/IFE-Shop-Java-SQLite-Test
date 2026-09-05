@@ -1,0 +1,8 @@
+{
+  "name": "cordova-plugin-ife-sqlite",
+  "version": "1.0.0",
+  "description": "IFE Shop native Java SQLite persistence plugin",
+  "cordova": {
+    "id": "cordova-plugin-ife-sqlite"
+  }
+}
